@@ -1,0 +1,9 @@
+<article>
+  <div class="post-title"><h2><%= post.escape("title") %></h2></div>
+  <main class="post-body">
+    <pre>
+      <%= post.escape("body") %>
+    </pre>
+  </main>
+  <a href="#posts/<%= post.id%>/edit">Edit Post</a>
+</article>

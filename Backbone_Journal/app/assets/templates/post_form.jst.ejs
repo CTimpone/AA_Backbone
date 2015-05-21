@@ -1,0 +1,24 @@
+<% if (post.id) { %>
+<h2>Edit a Post</h2>
+<% } else { %>
+<h2>Create a Post</h2>
+<% } %>
+
+<% if (typeof errors !== "undefined") { %>
+  <% _.each(errors, function (error) { %><br>
+    <%= error %>
+  <% }); %>
+<% }; %>
+<form class="new-post">
+  <label>
+    Title
+    <input type="text" name="post[title]" value="<%= post.escape('title') %>">
+  </label>
+  <br>
+  <label>
+    Body
+    <textarea name="post[body]"><%= post.escape('body') %></textarea>
+  </label>
+  <br>
+  <button class="edit">Submit</button>
+</form>
